@@ -37,6 +37,40 @@ Results of cache retrieval for environment document. `result` label is either `h
 Labels:
  - `result`
 
+### `flagsmith_flagd_document_build_seconds`
+
+Histogram.
+
+Wall-clock time spent translating an environment to a flagd document.
+
+Labels:
+
+### `flagsmith_flagd_document_size_bytes`
+
+Histogram.
+
+Size in bytes of the flagd document returned by the sync endpoint.
+
+Labels:
+
+### `flagsmith_flagd_sync_requests`
+
+Counter.
+
+Number of flagd HTTP sync requests served by the Flagsmith API.
+
+Labels:
+ - `status`
+
+### `flagsmith_flagd_translation_warnings`
+
+Counter.
+
+Translation warnings emitted while building flagd documents.
+
+Labels:
+ - `reason`
+
 ### `flagsmith_http_server_request_duration_seconds`
 
 Histogram.
@@ -69,6 +103,38 @@ Labels:
  - `route`
  - `method`
  - `response_status`
+
+### `flagsmith_segment_membership_backfill_duration_seconds`
+
+Histogram.
+
+Duration of a segment-membership backfill for one environment.
+
+Labels:
+
+### `flagsmith_segment_membership_backfill_identities`
+
+Counter.
+
+Total identities mirrored from Dynamo to ClickHouse by the segment-membership backfill task across all environments.
+
+Labels:
+
+### `flagsmith_segment_membership_refresh_duration_seconds`
+
+Histogram.
+
+Duration of a single segment-membership count-refresh run for one project.
+
+Labels:
+
+### `flagsmith_segment_membership_refresh_failures`
+
+Counter.
+
+Total segment-membership refresh runs that failed for any reason.
+
+Labels:
 
 ### `flagsmith_task_processor_enqueued_tasks`
 
